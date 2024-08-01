@@ -1,0 +1,45 @@
+.div {
+  display: block;
+  width: 424px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  text-align: center;
+}
+.title {
+  color: #ffc531;
+  margin-top: 8px;
+  font-size: 40px;
+}
+.span {
+  color: #e44848;
+}
+.icon {
+  width: 324px;
+  display: block;
+  stroke: #ffc531;
+  fill: #ffc531;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e44848;
+  border-radius: 30px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #101828;
+}
+.btn {
+  margin-top: 20px;
+  padding: 12px 40px;
+  color: #ffffff;
+  background-color: #e44848;
+  border-radius: 30px;
+  border: none;
+}
+.btn:hover,
+.btn:focus {
+  background-color: #d84343;
+}
