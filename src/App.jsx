@@ -7,11 +7,13 @@ const PsychologistsPage = lazy(() =>
 );
 const FavoritesPage = lazy(() => import("./pages/FavoritesPage/FavoritesPage"));
 import Loader from "./components/Loader/Loader";
+import Navigation from "./components/Navigation/Navigation";
 
 const App = () => {
   return (
     <>
       <Toaster />
+      <Navigation />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />

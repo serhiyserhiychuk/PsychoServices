@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import FilterForm from "../../components/FilterForm/FilterForm";
 import { useSelector, useDispatch } from "react-redux";
 import { selectLoading } from "../../redux/campers/selectors";
-import Navigation from "../../components/Navigation/Navigation";
 import Loader from "../../components/Loader/Loader";
 import css from "./FavoritesPage.module.css";
 
@@ -27,7 +26,6 @@ export default function MoviesPage() {
 
   return (
     <>
-      <Navigation />
       <div className={css.div}>
         <FilterForm onSubmit={onSubmit} />
         {isLoading && <Loader />}

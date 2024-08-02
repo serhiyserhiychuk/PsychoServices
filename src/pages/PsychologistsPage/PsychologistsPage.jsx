@@ -3,7 +3,6 @@ import FilterForm from "../../components/FilterForm/FilterForm";
 import { getAllCampers } from "../../redux/campers/operations";
 import { useSelector, useDispatch } from "react-redux";
 import { selectLoading } from "../../redux/campers/selectors";
-import Navigation from "../../components/Navigation/Navigation";
 import Loader from "../../components/Loader/Loader";
 import css from "./PsychologistsPage.module.css";
 
@@ -31,12 +30,9 @@ export default function MoviesPage() {
   }, [dispatch]);
 
   return (
-    <>
-      <Navigation />
-      <div className={css.div}>
-        <FilterForm onSubmit={onSubmit} />
-        {isLoading && <Loader />}
-      </div>
-    </>
+    <div className={css.div}>
+      <FilterForm onSubmit={onSubmit} />
+      {isLoading && <Loader />}
+    </div>
   );
 }

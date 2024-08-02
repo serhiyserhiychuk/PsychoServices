@@ -1,45 +1,112 @@
+.maindiv {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr min(464px, 100%);
+  padding: 78px 128px;
+  column-gap: 80px;
+}
 .div {
-  display: block;
-  width: 424px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 200px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .title {
-  color: #ffc531;
-  margin-top: 8px;
-  font-size: 40px;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 82px;
+  letter-spacing: -0.02em;
+  text-align: left;
 }
 .span {
-  color: #e44848;
+  font-size: 80px;
+  font-style: italic;
+  color: #54be96;
 }
 .icon {
-  width: 324px;
-  display: block;
-  stroke: #ffc531;
-  fill: #ffc531;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #e44848;
-  border-radius: 30px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  width: 20px;
+  height: 20px;
+  stroke: #fbfbfb;
+  fill: #fbfbfb;
 }
 .text {
-  font-size: 20px;
+  max-width: 80%;
+  font-size: 18px;
   font-weight: 500;
-  color: #101828;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-align: left;
 }
 .btn {
-  margin-top: 20px;
-  padding: 12px 40px;
+  display: flex;
+  padding: 18px 50px;
+  gap: 18px;
+  margin-top: 40px;
   color: #ffffff;
-  background-color: #e44848;
+  background-color: #54be96;
   border-radius: 30px;
   border: none;
+  max-width: fit-content;
 }
 .btn:hover,
 .btn:focus {
-  background-color: #d84343;
+  background-color: #36a379;
+}
+.image {
+  border-radius: 10px;
+}
+.imagediv {
+  position: relative;
+}
+.users {
+  position: absolute;
+  top: 36px;
+  right: -24px;
+  background-color: #fbc75e;
+  border-radius: 10px;
+  padding: 10px 10px 6px 10px;
+  transform: rotate(15deg);
+}
+.question {
+  position: absolute;
+  top: 186px;
+  left: -24px;
+  background-color: #4535af;
+  border-radius: 10px;
+  padding: 10px 10px 6px 10px;
+  transform: rotate(-15deg);
+}
+.checkdiv {
+  position: absolute;
+  top: 356px;
+  left: -84px;
+  display: flex;
+  gap: 8px;
+  background-color: #54be96;
+  border-radius: 10px;
+  padding: 24px;
+  max-width: fit-content;
+}
+.check {
+  background-color: #fbfbfb;
+  border-radius: 10px;
+  padding: 10px 10px 6px 10px;
+}
+.checkicon {
+  width: 30px;
+  height: 30px;
+  fill: #54be96;
+}
+.textdiv {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.label {
+  color: rgba(251, 251, 251, 0.5);
+  font-size: 14px;
+}
+.num {
+  color: #fbfbfb;
+  font-size: 24px;
+  font-weight: 700;
 }
