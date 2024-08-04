@@ -1,13 +1,20 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import css from "./Navigation.module.css";
+import svg from "../../../public/icons.svg";
 import LogInModal from "../LogInModal/LogInModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
+import useAuth from "../../hooks/useAuth.js";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../firebaseConfig.js";
+import toast from "react-hot-toast";
 
 export default function Navigation() {
   const [isLogInOpen, setIsLogInOpen] = useState(false);
   const [isRegOpen, setIsRegOpen] = useState(false);
+  const user = useAuth();
+  const navigate = useNavigate();
 
   const openLogInModal = () => {
     setIsLogInOpen(true);
@@ -23,6 +30,16 @@ export default function Navigation() {
 
   const closeRegModal = () => {
     setIsRegOpen(false);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/");
+      toast.success(`Goodbye, ${user.displayName}!`);
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
   };
 
   const buildLinkClass = ({ isActive }) => {
@@ -41,25 +58,48 @@ export default function Navigation() {
         <NavLink className={buildLinkClass} to="/psychologists">
           Psychologists
         </NavLink>
-        <NavLink className={buildLinkClass} to="/favorites">
-          Favorites
-        </NavLink>
+        {user ? (
+          <NavLink className={buildLinkClass} to="/favorites">
+            Favorites
+          </NavLink>
+        ) : (
+          false
+        )}
       </nav>
-      <ul className={css.btnlist}>
-        <li>
-          <button
-            className={`${css.btnlog} ${css.btn}`}
-            onClick={openLogInModal}
-          >
-            Log In
+      {user ? (
+        <div className={css.loggeddiv}>
+          <div className={css.namediv}>
+            <div className={css.userdiv}>
+              <svg className={css.usericon}>
+                <use href={svg + "#icon-user"}></use>
+              </svg>
+            </div>
+            <p className={css.name}>{user.displayName}</p>
+          </div>
+          <button className={`${css.btnlog} ${css.btn}`} onClick={handleLogout}>
+            Log Out
           </button>
-        </li>
-        <li>
-          <button className={`${css.btnreg} ${css.btn}`} onClick={openRegModal}>
-            Registration
-          </button>
-        </li>
-      </ul>
+        </div>
+      ) : (
+        <ul className={css.btnlist}>
+          <li>
+            <button
+              className={`${css.btnlog} ${css.btn}`}
+              onClick={openLogInModal}
+            >
+              Log In
+            </button>
+          </li>
+          <li>
+            <button
+              className={`${css.btnreg} ${css.btn}`}
+              onClick={openRegModal}
+            >
+              Registration
+            </button>
+          </li>
+        </ul>
+      )}
       {isLogInOpen && (
         <LogInModal isOpen={isLogInOpen} onClose={closeLogInModal} />
       )}

@@ -56,3 +56,25 @@
 .btnreg:focus {
   background-color: #36a379;
 }
+.loggeddiv {
+  display: flex;
+  gap: 28px;
+}
+.namediv {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.userdiv {
+  background-color: #54be96;
+  border-radius: 12px;
+  padding: 8px 8px 4px 8px;
+}
+.usericon {
+  width: 24px;
+  height: 24px;
+  fill: #fbfbfb;
+}
+.name {
+  font-weight: 500;
+}
