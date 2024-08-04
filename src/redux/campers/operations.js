@@ -14,7 +14,6 @@ export const getAllCampers = createAsyncThunk(
           dataRef,
           (snapshot) => {
             const data = snapshot.val();
-            console.log(data);
             resolve(data);
           },
           reject
