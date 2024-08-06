@@ -7,7 +7,8 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../../../firebaseConfig.js";
+import { set, ref } from "firebase/database";
+import { auth, database } from "../../../firebaseConfig.js";
 import Modal from "react-modal";
 import svg from "../../../public/icons.svg";
 import css from "./RegisterModal.module.css";
@@ -55,6 +56,11 @@ export default function RegisterModal({ isOpen, onClose }) {
       const user = userCredential.user;
       await updateProfile(user, {
         displayName: data.name,
+      });
+      await set(ref(database, "users/" + user.uid), {
+        name: data.name,
+        email: data.email,
+        favorites: [],
       });
       await signInWithEmailAndPassword(auth, data.email, data.password);
       toast.success(`Welcome, ${user.displayName}!`, { duration: 5000 });

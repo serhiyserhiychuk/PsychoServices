@@ -16,3 +16,8 @@
   font-size: 24px;
   line-height: 1.28;
 }
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
