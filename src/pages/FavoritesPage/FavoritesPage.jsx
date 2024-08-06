@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import FilterForm from "../../components/FilterForm/FilterForm";
 import { useSelector, useDispatch } from "react-redux";
-import { selectLoading } from "../../redux/campers/selectors";
+import { selectLoading } from "../../redux/psychologists/selectors.js";
 import Loader from "../../components/Loader/Loader";
 import css from "./FavoritesPage.module.css";
 

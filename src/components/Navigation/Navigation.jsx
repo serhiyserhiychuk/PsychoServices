@@ -47,7 +47,13 @@ export default function Navigation() {
   };
 
   return (
-    <div className={css.navdiv}>
+    <div
+      className={
+        window.location.pathname === "/"
+          ? css.navdiv
+          : `${css.navdiv} ${css.bc}`
+      }
+    >
       <p className={css.logo}>
         <span className={css.logospan}>psychologists.</span>services
       </p>

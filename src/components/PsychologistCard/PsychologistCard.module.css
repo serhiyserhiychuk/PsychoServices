@@ -1,0 +1,125 @@
+.carddiv {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 24px;
+  background-color: #fbfbfb;
+  width: 100%;
+}
+.imgdiv {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+}
+.imgdiv::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 12px;
+  height: 12px;
+  background-color: #38cd3e;
+  border-radius: 50%;
+  border: 2px solid #fbfbfb;
+}
+.img {
+  width: 96px;
+  height: 96px;
+  padding: 12px;
+  border: 2px solid rgba(84, 190, 150, 0.2);
+  border-radius: 30px;
+}
+.contentdiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+}
+.headdiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.namediv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.jobtitle {
+  font-weight: 500;
+  color: #8a8a89;
+}
+.name {
+  font-weight: 500;
+}
+.ratingdiv {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.ratingprice {
+  display: flex;
+  gap: 32px;
+}
+.rating {
+  position: relative;
+  display: flex;
+  gap: 8px;
+}
+.rating::after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: rgba(25, 26, 21, 0.2);
+  height: 16px;
+}
+.staricon {
+  width: 16px;
+  height: 16px;
+  fill: #ffc531;
+}
+.price {
+  color: #38cd3e;
+}
+.likebtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.likeicon {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: #191a15;
+}
+.list {
+  max-width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 4px;
+}
+.item {
+  padding: 8px 16px;
+  background-color: #f3f3f3;
+  border-radius: 24px;
+}
+.featname {
+  color: #8a8a89;
+}
+.feature {
+  color: #191a15;
+}
+.about {
+  color: rgba(25, 26, 21, 0.5);
+}
+.btn {
+  max-width: fit-content;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}

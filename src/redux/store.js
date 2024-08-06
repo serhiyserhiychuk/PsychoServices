@@ -10,18 +10,18 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { campersReducer } from "./campers/slice";
+import { psychologistsReducer } from "./psychologists/slice";
 
 const persistConfig = {
   key: "root",
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, campersReducer);
+const persistedReducer = persistReducer(persistConfig, psychologistsReducer);
 
 export const store = configureStore({
   reducer: {
-    campers: persistedReducer,
+    psychologists: persistedReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
