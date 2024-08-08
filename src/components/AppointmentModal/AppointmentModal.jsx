@@ -29,15 +29,16 @@ const ValidationSchema = Yup.object().shape({
 
 export default function AppointmentModal({ isOpen, onClose, psychologist }) {
   const {
+    register,
+    handleSubmit,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(ValidationSchema),
   });
 
   const onSubmit = (data) => {
-    console.log(data);
     toast.success(
-      "Thank you for reaching out, your psychologist will contact you soon!",
+      `Thank you for reaching out, ${psychologist.name} will contact you soon!`,
       { duration: 7000 }
     );
     onClose();
@@ -74,23 +75,34 @@ export default function AppointmentModal({ isOpen, onClose, psychologist }) {
           <p>{psychologist.name}</p>
         </div>
       </div>
-      <form className={css.form} onSubmit={onSubmit}>
+      <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={css.errordiv}>
-          <input className={css.input} id="name" placeholder="Name" />
+          <input
+            className={css.input}
+            id="name"
+            placeholder="Name"
+            {...register("name")}
+          />
           {errors.name && <p className={css.error}>{errors.name.message}</p>}
         </div>
         <div className={css.inputdiv}>
           <div className={css.errordiv}>
-            <input className={css.smallinput} id="phone" placeholder="+1" />
+            <input
+              className={css.smallinput}
+              id="phone"
+              placeholder="+1"
+              {...register("phone")}
+            />
             {errors.name && <p className={css.error}>{errors.name.message}</p>}
           </div>
           <div className={css.errordiv}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DesktopTimePicker
-                className={css.smallinput}
+                className={css.timePicker}
                 label="Appointment time"
                 value={value}
                 onChange={(newValue) => setValue(newValue)}
+                {...register("time")}
               />
             </LocalizationProvider>
             {errors.email && (
@@ -104,11 +116,17 @@ export default function AppointmentModal({ isOpen, onClose, psychologist }) {
             id="email"
             type="email"
             placeholder="Email"
+            {...register("email")}
           />
           {errors.email && <p className={css.error}>{errors.email.message}</p>}
         </div>
         <div className={css.errordiv}>
-          <textarea className={css.area} id="comment" placeholder="Comment" />
+          <textarea
+            className={css.area}
+            id="comment"
+            placeholder="Comment"
+            {...register("comment")}
+          />
           {errors.email && <p className={css.error}>{errors.email.message}</p>}
         </div>
         <button className={css.btn} type="submit">
