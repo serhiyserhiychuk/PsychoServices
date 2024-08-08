@@ -1,0 +1,143 @@
+.modal {
+  position: fixed;
+  padding: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  border-radius: 30px;
+  background-color: #fbfbfb;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+  background: #d6d6d6;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(25, 26, 21, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.closebtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.closeicon {
+  width: 32px;
+  height: 32px;
+  stroke: #191a15;
+}
+.title {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.text {
+  color: rgba(25, 26, 21, 0.5);
+  margin-bottom: 40px;
+}
+.img {
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+}
+.div {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.textdiv {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.yourtext {
+  font-size: 12px;
+  font-weight: 500;
+  color: #8a8a89;
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+}
+.input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(25, 26, 21, 0.1);
+  background-color: #fbfbfb;
+}
+.area {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(25, 26, 21, 0.1);
+  resize: none;
+  background-color: #fbfbfb;
+  height: 116px;
+}
+.smallinput {
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(25, 26, 21, 0.1);
+  background-color: #fbfbfb;
+}
+.inputdiv {
+  display: flex;
+  gap: 4px;
+}
+.btn {
+  padding: 16px 189px;
+  border-radius: 30px;
+  background-color: #54be96;
+  color: #fbfbfb;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.btn:hover,
+.btn:focus {
+  background-color: #36a379;
+}
+.errordiv {
+  position: relative;
+}
+.clock {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #191a15;
+}
+.error {
+  color: red;
+  position: absolute;
+  top: -16px;
+  left: 0px;
+}

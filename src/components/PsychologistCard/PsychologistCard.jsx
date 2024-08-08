@@ -6,9 +6,11 @@ import toast from "react-hot-toast";
 import { getFavorites, addToFavorites } from "../../redux/users/operations.js";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFavorites } from "../../redux/users/selectors.js";
+import AppointmentModal from "../AppointmentModal/AppointmentModal.jsx";
 
 export default function PsychologistCard({ psychologist }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [iconClass, setIconClass] = useState(css.likeicon);
   const user = useAuth();
   const dispatch = useDispatch();
@@ -142,8 +144,17 @@ export default function PsychologistCard({ psychologist }) {
                 </li>
               ))}
             </ul>
-            <button className={css.appbtn}>Make an appointment</button>
+            <button className={css.appbtn} onClick={() => setIsModalOpen(true)}>
+              Make an appointment
+            </button>
           </div>
+        )}
+        {isModalOpen && (
+          <AppointmentModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            psychologist={psychologist}
+          />
         )}
       </div>
     </div>
