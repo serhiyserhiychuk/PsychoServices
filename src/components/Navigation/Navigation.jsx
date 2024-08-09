@@ -16,22 +16,6 @@ export default function Navigation() {
   const user = useAuth();
   const navigate = useNavigate();
 
-  const openLogInModal = () => {
-    setIsLogInOpen(true);
-  };
-
-  const openRegModal = () => {
-    setIsRegOpen(true);
-  };
-
-  const closeLogInModal = () => {
-    setIsLogInOpen(false);
-  };
-
-  const closeRegModal = () => {
-    setIsRegOpen(false);
-  };
-
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -91,7 +75,9 @@ export default function Navigation() {
           <li>
             <button
               className={`${css.btnlog} ${css.btn}`}
-              onClick={openLogInModal}
+              onClick={() => {
+                setIsLogInOpen(true);
+              }}
             >
               Log In
             </button>
@@ -99,7 +85,9 @@ export default function Navigation() {
           <li>
             <button
               className={`${css.btnreg} ${css.btn}`}
-              onClick={openRegModal}
+              onClick={() => {
+                setIsRegOpen(true);
+              }}
             >
               Registration
             </button>
@@ -107,10 +95,20 @@ export default function Navigation() {
         </ul>
       )}
       {isLogInOpen && (
-        <LogInModal isOpen={isLogInOpen} onClose={closeLogInModal} />
+        <LogInModal
+          isOpen={isLogInOpen}
+          onClose={() => {
+            setIsLogInOpen(false);
+          }}
+        />
       )}
       {isRegOpen && (
-        <RegisterModal isOpen={isRegOpen} onClose={closeRegModal} />
+        <RegisterModal
+          isOpen={isRegOpen}
+          onClose={() => {
+            setIsRegOpen(false);
+          }}
+        />
       )}
     </div>
   );

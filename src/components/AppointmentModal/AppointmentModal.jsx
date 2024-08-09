@@ -36,7 +36,7 @@ export default function AppointmentModal({ isOpen, onClose, psychologist }) {
     resolver: yupResolver(ValidationSchema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     toast.success(
       `Thank you for reaching out, ${psychologist.name} will contact you soon!`,
       { duration: 7000 }

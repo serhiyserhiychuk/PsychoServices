@@ -35,7 +35,6 @@ export const getAllPsychologists = createAsyncThunk(
       const startIndex = lastOrder
         ? data.findIndex((item) => item._id === lastOrder) + 1
         : 0;
-      console.log(startIndex);
 
       const paginatedData = data.slice(startIndex, startIndex + limit);
 

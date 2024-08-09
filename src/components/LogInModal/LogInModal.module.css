@@ -4,7 +4,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 566px;
+  width: 90vw;
+  max-width: 566px;
   border-radius: 30px;
   background-color: #fbfbfb;
 }

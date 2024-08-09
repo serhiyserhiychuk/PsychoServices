@@ -4,11 +4,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
+  width: 90vw;
+  max-width: 600px;
   border-radius: 30px;
   background-color: #fbfbfb;
   max-height: 80vh;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 .modal::-webkit-scrollbar {
   width: 8px;
@@ -20,7 +21,7 @@
 
 .modal::-webkit-scrollbar-thumb {
   background: #d9d9d9;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 .modal::-webkit-scrollbar-thumb:hover {

@@ -1,5 +1,7 @@
 import css from "./HomePage.module.css";
 import svg from "../../../public/icons.svg";
+import imageSrc from "../../../public/psychologist.png";
+
 import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
@@ -28,11 +30,7 @@ export default function HomePage() {
         </button>
       </div>
       <div className={css.imagediv}>
-        <img
-          className={css.image}
-          src="../../../public/psychologist.png"
-          alt="psychologist"
-        />
+        <img className={css.image} src={imageSrc} alt="psychologist" />
         <div className={css.users}>
           <svg className={css.icon}>
             <use href={svg + "#icon-users"}></use>
