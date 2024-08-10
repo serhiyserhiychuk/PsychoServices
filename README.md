@@ -71,7 +71,7 @@ npm start
 
 ## Authors
 
-- **Serhiy Serhiychuk** – Lead developer and designer.
+- **Sergiy Sergiychuk** – Lead developer and designer.
 
 ## License
 
