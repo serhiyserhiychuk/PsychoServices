@@ -7,7 +7,7 @@ import LogInModal from "../LogInModal/LogInModal.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import useAuth from "../../hooks/useAuth.js";
 import { signOut } from "firebase/auth";
-import { auth } from "../../../firebaseConfig.js";
+import { auth } from "../../firebaseConfig.js";
 import toast from "react-hot-toast";
 
 export default function Navigation() {

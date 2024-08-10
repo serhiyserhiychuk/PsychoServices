@@ -49,6 +49,10 @@
   height: 32px;
   stroke: #191a15;
 }
+.closeicon:hover,
+.closeicon:focus {
+  stroke: #54be96;
+}
 .title {
   font-size: 40px;
   font-weight: 500;

@@ -1,7 +1,7 @@
 import Modal from "react-modal";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import toast from "react-hot-toast";
 import svg from "../../../public/icons.svg";
 import css from "./AppointmentModal.module.css";
@@ -31,17 +31,20 @@ export default function AppointmentModal({ isOpen, onClose, psychologist }) {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(ValidationSchema),
   });
 
   const onSubmit = () => {
-    toast.success(
-      `Thank you for reaching out, ${psychologist.name} will contact you soon!`,
-      { duration: 7000 }
-    );
-    onClose();
+    if (psychologist && psychologist.name) {
+      toast.success(
+        `Thank you for reaching out, ${psychologist.name} will contact you soon!`,
+        { duration: 7000 }
+      );
+      onClose();
+    }
   };
 
   const [value, setValue] = useState(dayjs("2024-08-07T00:00"));
@@ -97,12 +100,21 @@ export default function AppointmentModal({ isOpen, onClose, psychologist }) {
           </div>
           <div className={css.errordiv}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DesktopTimePicker
-                className={css.timePicker}
-                label="Appointment time"
-                value={value}
-                onChange={(newValue) => setValue(newValue)}
-                {...register("time")}
+              <Controller
+                name="time"
+                control={control}
+                defaultValue={value}
+                render={({ field: { onChange, value } }) => (
+                  <DesktopTimePicker
+                    className={css.timePicker}
+                    label="Appointment time"
+                    value={value}
+                    onChange={(newValue) => {
+                      onChange(newValue);
+                      setValue(newValue);
+                    }}
+                  />
+                )}
               />
             </LocalizationProvider>
             {errors.email && (

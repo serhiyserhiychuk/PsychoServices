@@ -26,6 +26,9 @@
   font-size: 16px;
   text-decoration: none;
 }
+.link:hover {
+  color: #54be96;
+}
 .active::after {
   content: "";
   position: absolute;
@@ -49,6 +52,10 @@
 .btnlog {
   background-color: inherit;
   border: 1px solid rgba(25, 26, 21, 0.2);
+}
+.btnlog:hover,
+.btnlog:focus {
+  border-color: #54be96;
 }
 .btnreg {
   border: none;

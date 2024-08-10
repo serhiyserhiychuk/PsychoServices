@@ -17,6 +17,10 @@
   border: none;
   cursor: pointer;
 }
+.btn:hover,
+.btn:focus {
+  background-color: #36a379;
+}
 .icon {
   position: absolute;
   top: 40px;

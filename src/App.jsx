@@ -19,7 +19,6 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/psychologists" element={<PsychologistsPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
-          <Route path="*" element={<HomePage />} />
         </Routes>
       </Suspense>
     </>

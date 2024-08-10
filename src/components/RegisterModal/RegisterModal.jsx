@@ -8,7 +8,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { set, ref } from "firebase/database";
-import { auth, database } from "../../../firebaseConfig.js";
+import { auth, database } from "../../firebaseConfig.js";
 import Modal from "react-modal";
 import svg from "../../../public/icons.svg";
 import css from "./RegisterModal.module.css";

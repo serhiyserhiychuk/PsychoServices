@@ -47,6 +47,7 @@ export default function PsychologistsPage() {
   return (
     <div className={css.div}>
       <FilterForm onSubmit={onSubmit} />
+      {isLoading && <Loader />}
       {psychologists && psychologists.length > 0 && (
         <ul className={css.list}>
           {psychologists.map(
@@ -69,7 +70,6 @@ export default function PsychologistsPage() {
           Load more
         </button>
       )}
-      {isLoading && <Loader />}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { ref, get, set } from "firebase/database";
-import { database } from "../../../firebaseConfig.js";
+import { database } from "../../firebaseConfig.js";
 
 export const getFavorites = createAsyncThunk(
   "users/getFavorites",

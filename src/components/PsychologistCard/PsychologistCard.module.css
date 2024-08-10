@@ -95,11 +95,20 @@
   fill: none;
   stroke: #191a15;
 }
+.likeicon:hover,
+.likeicon:focus {
+  stroke: #54be96;
+}
 .clickedLike {
   width: 26px;
   height: 26px;
   fill: #54be96;
   stroke: #54be96;
+}
+.clickedLike:hover,
+.clickedLike:focus {
+  fill: #36a379;
+  stroke: #36a379;
 }
 .list {
   max-width: 75%;
@@ -128,6 +137,10 @@
   text-decoration: underline;
   cursor: pointer;
   font-weight: 500;
+}
+.btn:hover,
+.btn:focus {
+  color: #54be96;
 }
 .morediv {
   margin-top: 24px;

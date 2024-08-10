@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../firebaseConfig.js";
+import { auth } from "../../firebaseConfig.js";
 import Modal from "react-modal";
 import svg from "../../../public/icons.svg";
 import css from "./LogInModal.module.css";

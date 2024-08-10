@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { ref, get } from "firebase/database";
-import { database } from "../../../firebaseConfig.js";
+import { database } from "../../firebaseConfig.js";
 
 const dataRef = ref(database, "psychologists");
 
