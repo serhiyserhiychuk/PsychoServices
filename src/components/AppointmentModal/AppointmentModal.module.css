@@ -146,3 +146,15 @@
   top: -16px;
   left: 0px;
 }
+@media (max-width: 767px) {
+  .inputdiv {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .smallinput {
+    max-width: 100%;
+  }
+  .btn {
+    padding: 16px;
+  }
+}

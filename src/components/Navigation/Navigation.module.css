@@ -1,5 +1,5 @@
 .navdiv {
-  padding: 24px 128px;
+  padding: 24px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -87,4 +87,17 @@
 }
 .name {
   font-weight: 500;
+}
+@media (min-width: 1440px) {
+  .navdiv {
+    padding-left: 128px;
+    padding-right: 128px;
+  }
+}
+@media (max-width: 767px) {
+  .navdiv {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 }

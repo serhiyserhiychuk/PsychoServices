@@ -3,17 +3,15 @@ import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
-  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  apiKey: "AIzaSyBh2sV-xoKDVfLKcFBr1703AvG_pqp9K9U",
+  authDomain: "psychoservices-2425f.firebaseapp.com",
+  projectId: "psychoservices-2425f",
+  storageBucket: "psychoservices-2425f.appspot.com",
+  messagingSenderId: "456372329674",
+  appId: "1:456372329674:web:3afcdba80e031d1d192833",
+  measurementId: "G-938XFZBCLS",
+  databaseURL: "https://psychoservices-2425f-default-rtdb.firebaseio.com",
 };
-
-console.log(process.env);
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);

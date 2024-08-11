@@ -91,3 +91,8 @@
   stroke: #191a15;
   fill: transparent;
 }
+@media (max-width: 767px) {
+  .btn {
+    padding: 24px;
+  }
+}

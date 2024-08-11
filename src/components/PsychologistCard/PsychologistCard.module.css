@@ -197,3 +197,11 @@
 .appbtn:focus {
   background-color: #36a379;
 }
+@media (max-width: 767px) {
+  .carddiv {
+    flex-direction: column;
+  }
+  .imgdiv {
+    max-width: fit-content;
+  }
+}
