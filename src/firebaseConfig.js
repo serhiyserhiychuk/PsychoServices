@@ -13,6 +13,8 @@ const firebaseConfig = {
   databaseURL: process.env.REACT_APP_databaseURL,
 };
 
+console.log(process.env.REACT_APP_databaseURL);
+
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
